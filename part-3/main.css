@@ -1,6 +1,6 @@
 /* GLOBALS  */
 body {
-    font-family: 'Luckiest Guy', sans-serif;
+    font-family: 'Noticia Text', serif;
     font-size: 16px;
   }
   .fxContainer {
@@ -29,6 +29,7 @@ body {
     flex-direction: column;
     align-items: stretch;
     flex-grow: 1;
+    order: 1;
     border: 1px solid hsl(302, 58%, 36%);
   }
   .nav > div {
@@ -38,7 +39,7 @@ body {
   div > a {
     text-decoration-line: none;
   }
-  .categories {
+  .shelves {
     background-color: hsl(302, 58%, 36%);
   }
   
@@ -57,7 +58,7 @@ body {
     flex-direction: row;
   }
   .sec-label {
-    text-align: center;
+    text-align: left;
     font-size: 22px;
   }
   table{
@@ -70,17 +71,16 @@ body {
   tr {
     height: 4rem;
   }
-  .play-btn{
-    width: 15%;
+  .Buy-btn{
+    width: 20%;
     text-align: center;
   }
-  .movie-title {
-    padding-left: 5%;
+  .book-title {
     font-size: 24px;
-    width: 55%;
+    width: 40%;
   }
-  .duration {
-    text-align: center;
+  .author {
+    text-align: left;
     font-size: 24px;
   }
   button {
@@ -89,8 +89,8 @@ body {
     height: 45px;
     padding: .5rem;
     background-color: hsl(302, 58%, 36%);
-    font-family: "Luckiest Guy", sans-serif;
-    font-size: 20px;
+    font-family: 'Noticia Text', serif;
+    font-size: 18px;
     border-radius: 8px;
   }
    
