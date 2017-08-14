@@ -17,9 +17,9 @@ Each requirement has a point value. A fully complete requirement gets full point
 
 ## General Requirements
 
-- [ ] __10:__ Solution is in a public GitHub repository called `phase-2-challenge-c`.
-- [ ] __10:__ Solution repository has 4 folders: `part-1`, `part-2`, and `part-3`, and `part-4`.
-- [ ] __20:__ Git history shows frequent commits.
+- [x] __10:__ Solution is in a public GitHub repository called `phase-2-challenge-c`.
+- [x] __10:__ Solution repository has 4 folders: `part-1`, `part-2`, and `part-3`, and `part-4`.
+- [x] __20:__ Git history shows frequent commits.
 
 ## Part 1: Write tests and solutions for these functions
 
@@ -176,17 +176,17 @@ Design a layout to match the following wireframe:
 
 ### Requirements
 
-- [ ] __10:__ All files are stored under the `part-3/` folder
-- [ ] __20:__ No third party CSS libraries are used (all code must be written from scratch)
-- [ ] __10:__ HTML and CSS are separated into their own files.
-- [ ] __20:__ Page has a full-width header with the site title "Bookstore" and a button "Book bag (3)"
-- [ ] __10:__ Site title "Bookstore" is aligned to the left side of the header
-- [ ] __10:__ "Book bag (3)" button is aligned to the right side of the header
-- [ ] __20:__ Page has a "Shelves" sidebar with all shelves for books
-- [ ] __10:__ Page has a main content area showing each of the books
-- [ ] __10:__ Main content organizes all books by shelf
-- [ ] __20:__ Main content lists books' name, author, and a "Buy" button
-- [ ] __20:__ Clicking on a shelf in the "Shelves" sidebar will jump to that shelf
+- [x] __10:__ All files are stored under the `part-3/` folder
+- [x] __20:__ No third party CSS libraries are used (all code must be written from scratch)
+- [x] __10:__ HTML and CSS are separated into their own files.
+- [x] __20:__ Page has a full-width header with the site title "Bookstore" and a button "Book bag (3)"
+- [x] __10:__ Site title "Bookstore" is aligned to the left side of the header
+- [x] __10:__ "Book bag (3)" button is aligned to the right side of the header
+- [x] __20:__ Page has a "Shelves" sidebar with all shelves for books
+- [x] __10:__ Page has a main content area showing each of the books
+- [x] __10:__ Main content organizes all books by shelf
+- [x] __20:__ Main content lists books' name, author, and a "Buy" button
+- [x] __20:__ Clicking on a shelf in the "Shelves" sidebar will jump to that shelf
 
 ## Part 4: Quiz time!
 
