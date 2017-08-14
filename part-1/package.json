@@ -1,0 +1,22 @@
+{
+  "name": "phase-2-challenge-c",
+  "version": "1.0.0",
+  "description": "Phase 2 challenge assessment",
+  "main": "functions.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ontoneio/phase-2-challenge-c.git"
+  },
+  "author": "Jonathan A. Mitchell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ontoneio/phase-2-challenge-c/issues"
+  },
+  "homepage": "https://github.com/ontoneio/phase-2-challenge-c#readme"
+}
