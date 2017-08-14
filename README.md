@@ -237,4 +237,4 @@ _Reminder: you can use the internet to help you answer these questions :)_
 
 ### Requirements
 
-- [ ] __50:__ All questions are answered correctly.
+- [x] __50:__ All questions are answered correctly.

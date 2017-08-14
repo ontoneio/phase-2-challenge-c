@@ -1,0 +1,96 @@
+/* GLOBALS  */
+body {
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 16px;
+  }
+  .fxContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0 2%;
+  }
+  
+  /* PAGE HEADER Component  */
+  
+  .pg-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: .5% 2%;
+    padding: 0 1%;
+    border: 1px solid hsl(302, 58%, 36%);
+  }
+  
+  /* GENRE NAVIGATION BOX  */
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 1;
+    border: 1px solid hsl(302, 58%, 36%);
+  }
+  .nav > div {
+    text-align: left;
+    padding-left: 10%;
+  }
+  div > a {
+    text-decoration-line: none;
+  }
+  .categories {
+    background-color: hsl(302, 58%, 36%);
+  }
+  
+  /* GENRE BREAKDOWN SECTIONS  */
+  
+  .genre-display {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+    margin-left: 2%;
+  }
+  .page-label {
+    font-size: 30px;
+  }
+  .genre-section {
+    flex-direction: row;
+  }
+  .sec-label {
+    text-align: center;
+    font-size: 22px;
+  }
+  table{
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  tbody {
+    border-top: 2px solid lightgrey;
+  }
+  tr {
+    height: 4rem;
+  }
+  .play-btn{
+    width: 15%;
+    text-align: center;
+  }
+  .movie-title {
+    padding-left: 5%;
+    font-size: 24px;
+    width: 55%;
+  }
+  .duration {
+    text-align: center;
+    font-size: 24px;
+  }
+  button {
+    display: inline-block;
+    width: 125px;
+    height: 45px;
+    padding: .5rem;
+    background-color: hsl(302, 58%, 36%);
+    font-family: "Luckiest Guy", sans-serif;
+    font-size: 20px;
+    border-radius: 8px;
+  }
+   
