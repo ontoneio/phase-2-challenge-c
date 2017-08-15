@@ -118,11 +118,13 @@ describe("Phase 2-c part-1 functions", function() {
             const validTest2 = p2.filterAround(validArg2, 'carrot', 'radish')
             const validTest3 = p2.filterAround(validArg3, 'E', 'O')
             const validTest4 = p2.filterAround(validArg4, 'carrot', 'radish')
+            const validTest5 = p2.filterAround(validArg2, 'aardvark', 'zebra')
 
             expect(validTest1).to.be.an('array').to.have.deep.members(['A', 'B', 'C', 'D', 'T', 'U', 'V', 'W'])
             expect(validTest2).to.be.an('array').to.have.deep.members(['apple', 'banana', 'tomato', 'yam'])
             expect(validTest1).to.be.an('array').to.have.deep.members(['T', 'U', 'V', 'W', 'A', 'B', 'C', 'D'])
             expect(validTest4).to.be.an('array').to.have.deep.members([ 'tomato', 'yam','apple', 'banana'])
+            expect(validTest5).to.be.an('array').to.deep.equal([])
 
         })
     })
