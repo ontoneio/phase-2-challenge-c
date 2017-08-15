@@ -30,10 +30,12 @@ describe("Phase 2-c part-1 functions", function() {
             const invalidTest1 = p2.weekday.bind(invalidDate1)
             const invalidTest2 = p2.weekday.bind(invalidDate2)
             const invalidTest3 = p2.weekday.bind(invalidDate3)
+            const invalidTest4 = p2.weekday.bind()
 
             expect(invalidTest1).to.throw(Error)
             expect(invalidTest2).to.throw(Error)
             expect(invalidTest3).to.throw(Error)
+            expect(invalidTest4).to.throw(Error)
         })
     })
 
@@ -61,13 +63,15 @@ describe("Phase 2-c part-1 functions", function() {
             const invalidType2 = ['An', 'Invalid', 'Array']
             const invalidType3 = {'some': 1, 'object': 2, 'literal': 3}
 
-            const invalidTest1 = () => p2.capitalizeFourth(invalidType1)
-            const invalidTest2 = () => p2.capitalizeFourth(invalidType2)
-            const invalidTest3 = () => p2.capitalizeFourth(invalidType3)
+            const invalidTest1 = p2.capitalizeFourth.bind(invalidType1)
+            const invalidTest2 = p2.capitalizeFourth.bind(invalidType2)
+            const invalidTest3 = p2.capitalizeFourth.bind(invalidType3)
+            const invalidTest4 = p2.capitalizeFourth.bind()
             
             expect(invalidTest1).to.throw(TypeError)
             expect(invalidTest2).to.throw(TypeError)
             expect(invalidTest3).to.throw(TypeError)
+            expect(invalidTest4).to.throw(TypeError)
         })
     })
 
@@ -95,13 +99,15 @@ describe("Phase 2-c part-1 functions", function() {
             const invalidObj2 = 30002500600
             const invalidObj3 = ['Array', 'is object', 'but not a valid', 1]
 
-            const invalidTest1 = () => p2.getValues(invalidObj1)
-            const invalidTest2 = () => p2.getValues(invalidObj2)
-            const invalidTest3 = () => p2.getValues(invalidObj3)
+            const invalidTest1 = p2.getValues.bind(invalidObj1)
+            const invalidTest2 = p2.getValues.bind(invalidObj2)
+            const invalidTest3 = p2.getValues.bind(invalidObj3)
+            const invalidTest4 = p2.getValues.bind()
             
             expect(invalidTest1).to.throw(Error)
             expect(invalidTest2).to.throw(Error)
             expect(invalidTest3).to.throw(Error)
+            expect(invalidTest4).to.throw(Error)
 
         })
     })
@@ -143,15 +149,14 @@ describe("Phase 2-c part-1 functions", function() {
             const invalidArg10 = ['An', 'Array', 'of', 'Stuff']
             const invalidArg11 = [ 1, false, NaN, {'SomeObj': 15}]
             const invalidArg12 = [ NaN, 'str', [], true]
-
             
-
             const invalidTest1 = () => p2.filterAround(invalidArg1, invalidArg4, invalidArg6 )
             const invalidTest2 = () => p2.filterAround(invalidArg2, invalidArg5, invalidArg7)
             const invalidTest3 = () => p2.filterAround(invalidArg3, invalidArg8, invalidArg9)
             const invalidTest4 = () => p2.filterAround(invalidArg10)
             const invalidTest5 = () => p2.filterAround(invalidArg11, 'catch', 'test')
             const invalidTest6 = () => p2.filterAround(invalidArg12, 'error', 'sweat')
+            const invalidTest7 = () => p2.filterAround()
 
             expect(invalidTest1).to.throw(Error)
             expect(invalidTest2).to.throw(Error)
@@ -159,6 +164,7 @@ describe("Phase 2-c part-1 functions", function() {
             expect(invalidTest4).to.throw(Error)
             expect(invalidTest5).to.throw(Error)
             expect(invalidTest6).to.throw(Error)
+            expect(invalidTest7).to.throw(Error)
             
         })
     })
