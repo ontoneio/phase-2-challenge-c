@@ -112,14 +112,18 @@ describe("Phase 2-c part-1 functions", function() {
             const validArg1 = ['A', 'B', 'C', 'D', 'J', 'K', 'L', 'M', 'T', 'U', 'V', 'W']
             const validArg2 = ['apple', 'banana', 'carrot', 'fennel','mango', 'orange', 'pears', 'radish', 'tomato', 'yam' ]
             const validArg3 = ['T', 'U', 'V', 'W', 'J', 'K', 'L', 'M', 'A', 'B', 'C', 'D']
+            const validArg4 = [ 'orange', 'pears', 'radish', 'tomato', 'yam', 'apple', 'banana', 'carrot', 'fennel','mango',]
             
             const validTest1 = p2.filterAround(validArg1, 'E', 'O')
             const validTest2 = p2.filterAround(validArg2, 'carrot', 'radish')
             const validTest3 = p2.filterAround(validArg3, 'E', 'O')
+            const validTest4 = p2.filterAround(validArg4, 'carrot', 'radish')
 
-            expect(validTest1).to.be.an('array').to.have.members(['A', 'B', 'C', 'D', 'T', 'U', 'V', 'W'])
-            expect(validTest2).to.be.an('array').to.have.members(['apple', 'banana', 'tomato', 'yam'])
-            expect(validTest1).to.be.an('array').to.have.members(['T', 'U', 'V', 'W', 'A', 'B', 'C', 'D'])
+            expect(validTest1).to.be.an('array').to.have.deep.members(['A', 'B', 'C', 'D', 'T', 'U', 'V', 'W'])
+            expect(validTest2).to.be.an('array').to.have.deep.members(['apple', 'banana', 'tomato', 'yam'])
+            expect(validTest1).to.be.an('array').to.have.deep.members(['T', 'U', 'V', 'W', 'A', 'B', 'C', 'D'])
+            expect(validTest4).to.be.an('array').to.have.deep.members([ 'tomato', 'yam','apple', 'banana'])
+
         })
     })
     context("filterAround()", function() {
@@ -127,15 +131,32 @@ describe("Phase 2-c part-1 functions", function() {
 
             const invalidArg1 = 30002500600
             const invalidArg2 = 'Not a valid arg for function'
-            const invalidArg3 = {'nothingness': 0}
+            const invalidArg3 = {'nothingness': 0, 'blackhole': NaN}
+            const invalidArg4 = true
+            const invalidArg5 = NaN
+            const invalidArg6 = 'cats'
+            const invalidArg7 = 'Walrus'
+            const invalidArg8 = new Object()
+            const invalidArg9 = new Array()
+            const invalidArg10 = ['An', 'Array', 'of', 'Stuff']
+            const invalidArg11 = [ 1, false, NaN, {'SomeObj': 15}]
+            const invalidArg12 = [ NaN, 'str', [], true]
 
-            const invalidTest1 = () => p2.filterAround(invalidArg1)
-            const invalidTest2 = () => p2.filterAround(invalidArg2)
-            const invalidTest3 = () => p2.filterAround(invalidArg3)
+            
+
+            const invalidTest1 = () => p2.filterAround(invalidArg1, invalidArg4, invalidArg6 )
+            const invalidTest2 = () => p2.filterAround(invalidArg2, invalidArg5, invalidArg7)
+            const invalidTest3 = () => p2.filterAround(invalidArg3, invalidArg8, invalidArg9)
+            const invalidTest4 = () => p2.filterAround(invalidArg10)
+            const invalidTest5 = () => p2.filterAround(invalidArg11, 'catch', 'test')
+            const invalidTest6 = () => p2.filterAround(invalidArg12, 'error', 'sweat')
 
             expect(invalidTest1).to.throw(Error)
             expect(invalidTest2).to.throw(Error)
             expect(invalidTest3).to.throw(Error)
+            expect(invalidTest4).to.throw(Error)
+            expect(invalidTest5).to.throw(Error)
+            expect(invalidTest6).to.throw(Error)
             
         })
     })
