@@ -13,21 +13,33 @@ module.exports = {
     },
 
     capitalizeFourth(string) {
+        const lowerCaseString = string.toLowerCase()
+        var result = ''
 
         if (typeof string !== 'string'){
             throw new TypeError('Function takes string type arguement')
         }
-
-        const lowerCaseString = string.toLowerCase()
-        var result = ''
-
-        for (var letter = 0; letter < lowerCaseString.length; letter++) {
-            result += (letter + 1) % 4 === 0 ? lowerCaseString[letter].toUpperCase() : lowerCaseString[letter];            
+        else {
+            for (var letter = 0; letter < lowerCaseString.length; letter++) {
+                result += (letter + 1) % 4 === 0 
+                ? lowerCaseString[letter].toUpperCase() 
+                : lowerCaseString[letter];            
+            }
+            return result
         }
-        return result
+
     },
 
     getValues(obj) {
+        const callableObject = Reflect.getPrototypeOf(obj)
+
+        if(!callableObject || Array.isArray(obj)){
+            throw new TypeError("Function takes Object type arguements only")
+        }
+        else {
+            return Object.values(obj)
+        }
+
 
     },
 

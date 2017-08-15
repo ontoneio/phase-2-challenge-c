@@ -82,9 +82,9 @@ describe("Phase 2-c part-1 functions", function() {
             const validTest2 = p2.getValues(validObj2)
             const validTest3 = p2.getValues(validObj3)
 
-            expect(validTest1).to.be.an('array').to.have.members([1, 2, 3])
-            expect(validTest2).to.be.an('array').to.have.members(['Jonny', 6, ['turtle', 'cat', 'dog']])
-            expect(validTest3).to.be.an('array').to.have.members(['Honda',['Accord', 'Civic', 'Pilot'], true])
+            expect(validTest1).to.be.an('array').to.have.deep.members([1, 2, 3])
+            expect(validTest2).to.be.an('array').to.have.deep.members(['Jonny', 6, ['turtle', 'cat', 'dog']])
+            expect(validTest3).to.be.an('array').to.have.deep.members(['Honda',['Accord', 'Civic', 'Pilot'], true])
             
         })
     })
