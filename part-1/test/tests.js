@@ -73,12 +73,36 @@ describe("Phase 2-c part-1 functions", function() {
 
     context("getValues()", function() {
         it("Returns all own values from given object argument", function() {
+
+            const validObj1 = {'first': 1, 'second': 2, 'third': 3}
+            const validObj2 = {'name': 'Jonny', 'height': 6, 'pets': ['turtle', 'cat', 'dog']}
+            const validObj3 = {'make': 'Honda', 'model': ['Accord', 'Civic', 'Pilot'], 'Running': true}
+
+            const validTest1 = p2.getValues(validObj1)
+            const validTest2 = p2.getValues(validObj2)
+            const validTest3 = p2.getValues(validObj3)
+
+            expect(validTest1).to.be.an('array').to.have.members([1, 2, 3])
+            expect(validTest2).to.be.an('array').to.have.members(['Jonny', 6, ['turtle', 'cat', 'dog']])
+            expect(validTest3).to.be.an('array').to.have.members(['Honda',['Accord', 'Civic', 'Pilot'], true])
             
         })
     })
     context("getValues()", function() {
         it("Checks that function throws error when not given a proper object type of argument", function() {
+
+            const invalidObj1 = 'Invalid string for function'
+            const invalidObj2 = 30002500600
+            const invalidObj3 = ['Array', 'is object', 'but not a valid', 1]
+
+            const invalidTest1 = () => p2.getValues(invalidObj1)
+            const invalidTest2 = () => p2.getValues(invalidObj2)
+            const invalidTest3 = () => p2.getValues(invalidObj3)
             
+            expect(invalidTest1).to.throw(Error)
+            expect(invalidTest2).to.throw(Error)
+            expect(invalidTest3).to.throw(Error)
+
         })
     })
 
