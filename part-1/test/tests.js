@@ -115,6 +115,12 @@ describe("Phase 2-c part-1 functions", function() {
     context("filterAround()", function() {
         it("returns a new array containing only the elements from the source array that come before lower alphabetically and after upper", function() {
 
+            let animals = ['dog', 'cat', 'zebra', 'ape', 'lion', 'cow']
+            
+            const animalTests1 = p2.filterAround(animals, 'cow', 'dog') // => ['cat', 'zebra', 'ape', 'lion']
+            const animalTests2 = p2.filterAround(animals, 'chimp', 'lobster') // => ['cat', 'zebra', 'ape']
+            const animalTests3 = p2.filterAround(animals, 'aardvark', 'zebu') // => []
+
             const validArg1 = ['A', 'B', 'C', 'D', 'J', 'K', 'L', 'M', 'T', 'U', 'V', 'W']
             const validArg2 = ['apple', 'banana', 'carrot', 'fennel','mango', 'orange', 'pears', 'radish', 'tomato', 'yam' ]
             const validArg3 = ['T', 'U', 'V', 'W', 'J', 'K', 'L', 'M', 'A', 'B', 'C', 'D']
@@ -132,6 +138,9 @@ describe("Phase 2-c part-1 functions", function() {
             expect(validTest4).to.be.an('array').to.have.deep.members([ 'tomato', 'yam','apple', 'banana'])
             expect(validTest5).to.be.an('array').to.deep.equal([])
 
+            expect(animalTests1).to.be.an('array').to.have.deep.members(['cat', 'zebra', 'ape', 'lion'])
+            expect(animalTests2).to.be.an('array').to.have.deep.members(['cat', 'zebra', 'ape'])
+            expect(animalTests3).to.deep.equal([])
         })
     })
     context("filterAround()", function() {
@@ -149,6 +158,7 @@ describe("Phase 2-c part-1 functions", function() {
             const invalidArg10 = ['An', 'Array', 'of', 'Stuff']
             const invalidArg11 = [ 1, false, NaN, {'SomeObj': 15}]
             const invalidArg12 = [ NaN, 'str', [], true]
+           
             
             const invalidTest1 = () => p2.filterAround(invalidArg1, invalidArg4, invalidArg6 )
             const invalidTest2 = () => p2.filterAround(invalidArg2, invalidArg5, invalidArg7)
