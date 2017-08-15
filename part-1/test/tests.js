@@ -108,11 +108,34 @@ describe("Phase 2-c part-1 functions", function() {
 
     context("filterAround()", function() {
         it("returns a new array containing only the elements from the source array that come before lower alphabetically and after upper", function() {
+
+            const validArg1 = ['A', 'B', 'C', 'D', 'J', 'K', 'L', 'M', 'T', 'U', 'V', 'W']
+            const validArg2 = ['apple', 'banana', 'carrot', 'fennel','mango', 'orange', 'pears', 'radish', 'tomato', 'yam' ]
+            const validArg3 = ['T', 'U', 'V', 'W', 'J', 'K', 'L', 'M', 'A', 'B', 'C', 'D']
             
+            const validTest1 = p2.filterAround(validArg1, 'E', 'O')
+            const validTest2 = p2.filterAround(validArg2, 'carrot', 'radish')
+            const validTest3 = p2.filterAround(validArg3, 'E', 'O')
+
+            expect(validTest1).to.be.an('array').to.have.members(['A', 'B', 'C', 'D', 'T', 'U', 'V', 'W'])
+            expect(validTest2).to.be.an('array').to.have.members(['apple', 'banana', 'tomato', 'yam'])
+            expect(validTest1).to.be.an('array').to.have.members(['T', 'U', 'V', 'W', 'A', 'B', 'C', 'D'])
         })
     })
     context("filterAround()", function() {
         it("Checks that function throws error when not given a proper types of arguments", function() {
+
+            const invalidArg1 = 30002500600
+            const invalidArg2 = 'Not a valid arg for function'
+            const invalidArg3 = {'nothingness': 0}
+
+            const invalidTest1 = () => p2.filterAround(invalidArg1)
+            const invalidTest2 = () => p2.filterAround(invalidArg2)
+            const invalidTest3 = () => p2.filterAround(invalidArg3)
+
+            expect(invalidTest1).to.throw(Error)
+            expect(invalidTest2).to.throw(Error)
+            expect(invalidTest3).to.throw(Error)
             
         })
     })
