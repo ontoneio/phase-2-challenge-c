@@ -65,9 +65,9 @@ describe("Phase 2-c part-1 functions", function() {
             const invalidTest2 = () => p2.capitalizeFourth(invalidType2)
             const invalidTest3 = () => p2.capitalizeFourth(invalidType3)
             
-            expect(invalidTest1).to.throw(Error)
-            expect(invalidTest2).to.throw(Error)
-            expect(invalidTest3).to.throw(Error)
+            expect(invalidTest1).to.throw(TypeError)
+            expect(invalidTest2).to.throw(TypeError)
+            expect(invalidTest3).to.throw(TypeError)
         })
     })
 

@@ -8,13 +8,23 @@ module.exports = {
             throw new Error("Not a proper Date object for function argument")
         }
         else {
-            console.log(daysOfWeek[date.getDay()]);                    
             return daysOfWeek[date.getDay()]            
         }
     },
 
     capitalizeFourth(string) {
 
+        if (typeof string !== 'string'){
+            throw new TypeError('Function takes string type arguement')
+        }
+
+        const lowerCaseString = string.toLowerCase()
+        var result = ''
+
+        for (var letter = 0; letter < lowerCaseString.length; letter++) {
+            result += (letter + 1) % 4 === 0 ? lowerCaseString[letter].toUpperCase() : lowerCaseString[letter];            
+        }
+        return result
     },
 
     getValues(obj) {
