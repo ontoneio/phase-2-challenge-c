@@ -1,56 +1,41 @@
 const fs = require('fs')
 
 let carModel = process.argv[2]
-
 let carsFile = fs.readFileSync('./cars.json', 'utf8')
+let resultsFound = []
 
+if (!carModel) { console.error('\nNo arguments passed.\nPlease specify a model of car :-)\n')}
 
-if (!carModel) { console.error('No arguments passed.\n Please specify a model of car :-)')}
-
-else{   console.log(`Finding cars with model "${carModel}"...\n\n`); 
+else{   console.log(`\nFinding cars with model "${carModel}"...\n`); 
         getCarByModel(carModel, carsFile) }
 
-function getCarByModel(carModel, carFile){   
 
-    function formatJSONreviver(propertyName, propertyValue) {
-        if (propertyName === "make" || propertyName === "vin") {
-            return undefined;
-        }
-        return propertyValue
-    }
 
-    let parsedFile = JSON.parse(carsFile, formatJSONreviver)
-
-    console.log(parsedFile)
-
-    let carModelCase = carModel.toLowerCase()
-    let carFileCase
-
-    let resultsFound = []
-    let foundModel = {}
-}
-
+function formatJSONreviver(propertyName, propertyValue) {
     
+    if (propertyName === "make" || propertyName === "vin") {
+        return undefined;
+    }
+    return propertyValue 
+}        
 
-/* 
-function compares (string, object.Value) for equality {
+function getCarByModel(carModel, carFile) { 
+    
+    let parsedFile = JSON.parse(carsFile, formatJSONreviver)
+    let carModelCase = carModel.toLowerCase()
 
-    JSON.parses(object)
+    // let foundModel = {}
 
-}
+    let foundModels = parsedFile.filter((carModel, index) => {
+        if(carModel.model.toLowerCase() === carModelCase) {
+            return carModel
+            }        
+        }
+    )
 
-id
-model
-year
-last_owner
-date_purchased
-
-
-"id": 1,
-"make": "Volkswagen",
-"model": "Jetta",
-"year": 2011,
-"vin": "3573499720689269",
-"last_owner": "Kaylil Minico",
-"date_purchased": "7/3/2016"
-*/
+    if (foundModels.length === 0) {
+        console.warn(`No models found with name "${carModel}"...\n`);
+    }
+    else {
+        console.log(foundModels);        
+    }
