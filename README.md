@@ -160,8 +160,8 @@ Finding cars with model "jetta"...
 
 #### Requirements
 
-- [ ] __40:__ `searchInYears.js` script prints the car  `id`, `make`, `model`, and `year` for all cars with a year inside the year range provided in the script argument. The range is _inclusive_—i.e. include cars with the same year as the start year or the end year of the range, as well as all years in between.
-- [ ] __40:__ `searchByModel.js` script prints the car `id`, `model`, `year`, `last_owner`, and `date_purchased` for all cars with a `model` that matches the provided argument (ignoring case).
+- [x] __40:__ `searchInYears.js` script prints the car  `id`, `make`, `model`, and `year` for all cars with a year inside the year range provided in the script argument. The range is _inclusive_—i.e. include cars with the same year as the start year or the end year of the range, as well as all years in between.
+- [x] __40:__ `searchByModel.js` script prints the car `id`, `model`, `year`, `last_owner`, and `date_purchased` for all cars with a `model` that matches the provided argument (ignoring case).
 
 ## Part 3: HTML layout for Bookstore
 
