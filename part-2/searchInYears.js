@@ -59,10 +59,10 @@ function getCarByYear(yearRange, carFile) {
         }
     )
 
-    if (foundModels.length === 0) {
-        console.warn(`\nNo models found within "${yearRange}"...\n`);
+        if (foundModels.length === 0) {
+            console.warn(`\nNo models found within "${yearRange}"...\n`);
     }
-    else {
-        console.log(foundModels);        
+        else {
+            console.log(foundModels);        
     }
 }
