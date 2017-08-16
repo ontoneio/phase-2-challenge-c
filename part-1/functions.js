@@ -16,8 +16,8 @@ module.exports = {
         const lowerCaseString = string.toLowerCase()
         var result = ''
 
-        if (typeof string !== 'string' || arguments.length === 0){
-            throw new TypeError('Function takes string type argument')
+        if ( string.length < 4 || typeof string !== 'string' || arguments.length === 0){
+            throw new TypeError('Function takes string type argument with at least 4 characters')
         }
         else {
             for (var letter = 0; letter < lowerCaseString.length; letter++) {

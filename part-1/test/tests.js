@@ -62,16 +62,25 @@ describe("Phase 2-c part-1 functions", function() {
             const invalidType1 = 2005
             const invalidType2 = ['An', 'Invalid', 'Array']
             const invalidType3 = {'some': 1, 'object': 2, 'literal': 3}
+            const invalidType4 = ''
+            const invalidType5 = '333'
+            const invalidType6 = 'Max'
 
-            const invalidTest1 = p2.capitalizeFourth.bind(invalidType1)
-            const invalidTest2 = p2.capitalizeFourth.bind(invalidType2)
-            const invalidTest3 = p2.capitalizeFourth.bind(invalidType3)
-            const invalidTest4 = p2.capitalizeFourth.bind()
+            const invalidTest1 = () => p2.capitalizeFourth(invalidType1)
+            const invalidTest2 = () => p2.capitalizeFourth(invalidType2)
+            const invalidTest3 = () => p2.capitalizeFourth(invalidType3)
+            const invalidTest4 = () => p2.capitalizeFourth()
+            const invalidTest5 = () => p2.capitalizeFourth(invalidType4)
+            const invalidTest6 = () => p2.capitalizeFourth(invalidType5)
+            const invalidTest7 = () => p2.capitalizeFourth(invalidType6)
             
             expect(invalidTest1).to.throw(TypeError)
             expect(invalidTest2).to.throw(TypeError)
             expect(invalidTest3).to.throw(TypeError)
             expect(invalidTest4).to.throw(TypeError)
+            expect(invalidTest5).to.throw(TypeError)
+            expect(invalidTest6).to.throw(TypeError)
+            expect(invalidTest7).to.throw(TypeError)
         })
     })
 
