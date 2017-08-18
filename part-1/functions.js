@@ -46,7 +46,7 @@ module.exports = {
         if (arguments.length < 3){
             throw new Error('Function needs 3 arguments')
         }
-        else if (!Array.isArray(array || typeof lower && upper !== 'string')) {
+        else if (!Array.isArray(array) || typeof lower && upper !== 'string') {
             throw new Error('Function takes [Array, String, String] as arguments')
         }
         else if (array.some((item) => typeof item !== 'string')) {
